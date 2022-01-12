@@ -14,7 +14,7 @@ class AuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth.api', [
+        $this->middleware('api', [
             'except' => [
                 'login', 'register'
             ]
@@ -87,7 +87,7 @@ class AuthController extends Controller
         'access_token' => $token,
         'token_type' => 'bearer',
         'expires_in' => '86400',
-        'user' =>auth()->user()
+        'user' =>auth()->user(),
         ]);
     }
 }
